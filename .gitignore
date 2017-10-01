@@ -21,6 +21,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# project files
 /.project
 
+# webpack generated files
 .tmp
