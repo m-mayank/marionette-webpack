@@ -8,7 +8,7 @@
     "start": "webpack-dev-server",
     "test": "mocha-webpack"
   },
-  "author": "",
+  "author": "m-mayank",
   "license": "MIT",
   "dependencies": {
     "backbone-validation": "0.11.5",
