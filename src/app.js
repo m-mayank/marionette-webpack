@@ -13,7 +13,6 @@ var App = Marionette.Application.extend({
 		console.log('App started.');
 		this.addRegion();
 		this.showView();
-		// jQuery(document).foundation();
 	},
 	
 	addRegion: function () {
