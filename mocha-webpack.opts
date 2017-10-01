@@ -1,0 +1,4 @@
+--colors
+--webpack-config webpack.config-test.js
+test/**/*.test.js
+-r jsdom-global/register
