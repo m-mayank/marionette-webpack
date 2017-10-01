@@ -3,14 +3,12 @@ logs
 *.log
 npm-debug.log*
 
-# Bower dependency directory (https://bower.io/)
-bower_components
-
-# Compiled binary 
+# distribution binary 
 dist
 
 # Dependency directories
 node_modules/
+bower_components/
 
 # Typescript v1 declaration files
 typings/
