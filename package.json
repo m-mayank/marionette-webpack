@@ -9,7 +9,7 @@
     "test": "mocha-webpack"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "backbone-validation": "0.11.5",
     "backbone.marionette": "2.4.2",
