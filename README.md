@@ -2,15 +2,15 @@
 
 A sample project demonstrating setup of a backbone marionette application with webpack.
 
-#### Installation
+### Installation
 npm i
 
-#### Test
+### Test
 npm test
 
-#### Dev server
+### Dev server
 npm start
 
 
-#### Distribution build
+### Distribution build
 npm run build
