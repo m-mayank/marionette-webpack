@@ -24,4 +24,7 @@ typings/
 
 # mpcha-webpack generated files
 .tmp
+
+# others
 /.metadata/
+/.DS_Store
