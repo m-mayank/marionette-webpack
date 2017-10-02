@@ -1,3 +1,3 @@
 # marionette-webpack
 
-### A project seed demonstrating setup for a backbone marionette application with webpack.
+### A project seed demonstrating setup of a backbone marionette application with webpack.
