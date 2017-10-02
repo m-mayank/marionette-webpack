@@ -1,35 +1,38 @@
 import template from '../templates/AppLayoutTmpl.hbs';
-var AppLayoutView = Marionette.ItemView.extend({
+import appVent from '../appVent';
+import appConstants from '../appConstants';
+import LoginView from './login/LoginView';
+import HomeView from './home/HomeView';
+
+var AppLayoutView = Marionette.LayoutView.extend({
 	
 	id: 'app-layout-view',
 	
 	template: template,
 	
-	ui: {
-		'btnRegister': '#btn-register'
+	regions: {
+		'layoutRegion': '#layout-region'
 	},
 	
-	events: {
-		'click @ui.btnRegister': 'registerClicked'
+	initialize: function () {
+		this.subscribeToAppVent();
 	},
 	
-	bindings: {
-		'#input-username': 'username',
-	    '#input-password': 'password'
+	subscribeToAppVent: function () {
+		this.listenTo(appVent, appConstants.EVENT_SHOW_LOGIN, this.renderLoginView, this);
+		this.listenTo(appVent, appConstants.EVENT_SHOW_HOME, this.renderHomeView, this);
 	},
 	
-	onRender: function () {
-		this.stickit();
-		Backbone.Validation.bind(this);
+	renderLoginView: function () {
+		this.layoutRegion.show(new LoginView({
+			model: this.model
+		}));
 	},
 	
-	registerClicked: function () {
-		console.log(this.model.isValid(true));
-	},
-	
-	onDestroy: function () {
-		this.unstickit();
-		Backbone.Validation.unbind(this);
+	renderHomeView: function () {
+		this.layoutRegion.show(new HomeView({
+			model: this.model
+		}));
 	}
 });
 

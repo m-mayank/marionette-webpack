@@ -1,17 +1,20 @@
 import config from './app-config';
-import AppLayoutView from './views/AppLayoutView';
-import UserModel from './models/user/UserModel';
 import bootstrap from 'foundation-sites/dist/css/foundation.min.css';
 import css from './app.css';
+import appVent from './appVent';
+import AppRouter from './AppRouter';
+import AppLayoutView from './views/AppLayoutView';
+import UserModel from './models/user/UserModel';
 
 var App = Marionette.Application.extend({
 	
-	channel: Radio.channel('app-channel'),
+	initialize: function () {
+		this.addRegion();
+	},
 	
 	onStart: function () {
-		console.log('App started.');
-		this.addRegion();
 		this.showView();
+		this.startHistory();
 	},
 	
 	addRegion: function () {
@@ -24,6 +27,13 @@ var App = Marionette.Application.extend({
 		this.region.show(new AppLayoutView({
 			model: new UserModel()
 		}));
+	},
+	
+	startHistory: function () {
+		var router = new AppRouter();
+		if (Backbone.history) {
+			Backbone.history.start();
+		}
 	}
 });
 
