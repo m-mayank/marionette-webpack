@@ -1,5 +1,5 @@
-var template = require('../templates/AppLayoutTmpl.hbs');
-export default Marionette.ItemView.extend({
+import template from '../templates/AppLayoutTmpl.hbs';
+var AppLayoutView = Marionette.ItemView.extend({
 	
 	id: 'app-layout-view',
 	
@@ -28,6 +28,9 @@ export default Marionette.ItemView.extend({
 	},
 	
 	onDestroy: function () {
+		this.unstickit();
 		Backbone.Validation.unbind(this);
 	}
 });
+
+export {AppLayoutView as default};

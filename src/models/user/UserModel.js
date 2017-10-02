@@ -1,4 +1,4 @@
-export default Backbone.Model.extend({
+var UserModel = Backbone.Model.extend({
 	
 	validation: function () {
 		return {
@@ -11,3 +11,5 @@ export default Backbone.Model.extend({
 		};
 	}
 });
+
+export {UserModel as default};

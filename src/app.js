@@ -1,7 +1,6 @@
 import config from './app-config';
 import AppLayoutView from './views/AppLayoutView';
 import UserModel from './models/user/UserModel';
-
 import bootstrap from 'foundation-sites/dist/css/foundation.min.css';
 import css from './app.css';
 
