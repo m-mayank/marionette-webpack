@@ -1,3 +1,1 @@
 # marionette-webpack
-
-setup
