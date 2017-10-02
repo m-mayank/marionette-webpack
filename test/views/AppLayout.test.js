@@ -1,5 +1,6 @@
+import appVent from '../../src/appVent';
+import appConstants from '../../src/appConstants';
 import AppLayoutView from '../../src/views/AppLayoutView';
-import config from '../../src/app-config';
 
 describe('App Layout Test cases', function () {
 	
@@ -21,35 +22,17 @@ describe('App Layout Test cases', function () {
 		});
 	});
 	
-	describe('#find username input field', function () {
-		it('username input field', function () {
-			assert.equal(this.view.$el.find('#input-username').length, 1);
+	describe('#renderLoginView()', function () {
+		it('login view should be present in $el', function () {
+			appVent.trigger(appConstants.EVENT_SHOW_LOGIN);
+			assert.equal(this.view.$el.find('#login-view').length, 1);
 		});
 	});
 	
-	describe('#find password input field', function () {
-		it('password input field', function () {
-			assert.equal(this.view.$el.find('#input-password').length, 1);
-		});
-	});
-	
-	describe('#find register button', function () {
-		it('password input field', function () {
-			assert.equal(this.view.$el.find('#btn-register').length, 1);
-		});
-	});
-	
-	describe('#enter username', function () {
-		it('username should be available in model', function () {
-			this.view.$el.find('#input-username').val('test-user-name').trigger('change');
-			assert.equal(this.model.get('username'), 'test-user-name');
-		});
-	});
-	
-	describe('#enter password', function () {
-		it('password should be available in model', function () {
-			this.view.$el.find('#input-password').val('test-password').trigger('change');
-			assert.equal(this.model.get('password'), 'test-password');
+	describe('#renderHomeView()', function () {
+		it('home view should be present in $el', function () {
+			appVent.trigger(appConstants.EVENT_SHOW_HOME);
+			assert.equal(this.view.$el.find('#home-view').length, 1);
 		});
 	});
 	
