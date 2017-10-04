@@ -22,8 +22,3 @@ module.exports = {
 		'assert' : 'assert'
 	}) ]
 };
-
-//var config = require('./webpack.config');
-//config.target = 'node';
-//config.externals = [ nodeExternals() ];
-//module.exports = config;

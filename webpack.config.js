@@ -7,7 +7,12 @@ module.exports = {
 		contentBase : './dist'
 	},
 	devtool : 'inline-source-map',
-	entry : './src/app.js',
+	entry : {
+		app : "./src/app.js",
+		vendor : [ 'jquery', 'jquery-ui', 'underscore', 'foundation-sites',
+				'backbone.stickit', 'backbone.radio', 'backbone.marionette',
+				'backbone-validation', 'backbone' ]
+	},
 	output : {
 		filename : 'bundle.js',
 		path : path.resolve(__dirname, 'dist')
@@ -22,7 +27,10 @@ module.exports = {
 			use : [ 'style-loader', 'css-loader' ]
 		} ]
 	},
-	plugins : [ new Webpack.ProvidePlugin({
+	plugins : [ new Webpack.optimize.CommonsChunkPlugin({
+		name : 'vendor',
+		filename : 'vendor.bundle.js'
+	}), new Webpack.ProvidePlugin({
 		'$' : 'jquery',
 		'jQuery' : 'jquery',
 		'Backbone' : 'backbone',
