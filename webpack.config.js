@@ -4,7 +4,17 @@ var HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	devServer : {
-		contentBase : './dist'
+		contentBase : './dist',
+		proxy : {
+			'/api/*' : {
+				target : 'http://jsonplaceholder.typicode.com',
+				secure : false,
+				changeOrigin: true,
+				pathRewrite: {
+                    "^/api": ""
+                }
+			}
+		}
 	},
 	devtool : 'inline-source-map',
 	entry : {

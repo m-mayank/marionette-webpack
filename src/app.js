@@ -13,8 +13,12 @@ var App = Marionette.Application.extend({
 	},
 	
 	onStart: function () {
-		this.showView();
-		this.startHistory();
+		var _this = this;
+		this.fetchData().then(function (data) {
+			console.log(data);
+			_this.showView();
+			_this.startHistory();
+		})
 	},
 	
 	addRegion: function () {
@@ -34,6 +38,13 @@ var App = Marionette.Application.extend({
 		if (Backbone.history) {
 			Backbone.history.start();
 		}
+	},
+	
+	fetchData: function () {
+		// Test for proxy redirection
+		var model = new Backbone.Model({});
+		model.url = '/api/posts/2';
+		return model.fetch();
 	}
 });
 
