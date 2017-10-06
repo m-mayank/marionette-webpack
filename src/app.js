@@ -43,7 +43,7 @@ var App = Marionette.Application.extend({
 	fetchData: function () {
 		// Test for proxy redirection
 		var model = new Backbone.Model({});
-		model.url = '/api/posts/2';
+		model.url = '/user/2';
 		return model.fetch();
 	}
 });

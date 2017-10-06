@@ -6,12 +6,12 @@ module.exports = {
 	devServer : {
 		contentBase : './dist',
 		proxy : {
-			'/api/*' : {
-				target : 'http://jsonplaceholder.typicode.com',
+			'/user/*' : {
+				target : 'http://jsonplaceholder.typicode.com/posts/',
 				secure : false,
 				changeOrigin: true,
 				pathRewrite: {
-                    "^/api": ""
+                    "^/user": ""
                 }
 			}
 		}
