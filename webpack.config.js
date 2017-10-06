@@ -33,6 +33,7 @@ module.exports = {
 	}), new Webpack.ProvidePlugin({
 		'$' : 'jquery',
 		'jQuery' : 'jquery',
+		'_' : 'underscore',
 		'Backbone' : 'backbone',
 		'Marionette' : 'backbone.marionette',
 		'Backbone.Stickit' : 'backbone.stickit',

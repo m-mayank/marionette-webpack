@@ -1,4 +1,3 @@
-import config from '../../../src/app-config';
 import UserModel from '../../../src/models/user/UserModel';
 
 describe('User Model test case', function() {
@@ -48,9 +47,15 @@ describe('User Model test case', function() {
   });
   
   describe('#is password Valid', function () {
-	  it('should return true', function () {
+	  it('should return true', function () {																												
 		  this.model.set('password', 'test');
 		  assert.equal(this.model.isValid('password'), true);
+	  });
+  });
+  
+  describe('#initTasks()', function () {
+	  it('should have no tasks', function () {
+		  assert.equal(this.model.get('tasks').length, 0);
 	  });
   });
   

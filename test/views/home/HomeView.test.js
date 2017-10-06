@@ -24,7 +24,13 @@ describe('Home view Test cases', function () {
 	
 	describe('#display username', function () {
 		it('username present in model shloud be displayed', function () {
-			assert.equal(this.view.$el.text(), 'Welcome test-user');
+			assert.equal(this.view.$el.find('#span-username').text(), 'test-user');
+		});
+	});
+	
+	describe('#renderTasksView()', function () {
+		it('should have tasks view', function () {
+			assert.notEqual(this.view.$el.find('#task-view').html, '');
 		});
 	});
 	
