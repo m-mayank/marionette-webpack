@@ -1,6 +1,7 @@
 var path = require('path');
 var Webpack = require('webpack');
 var HTMLWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
 	devServer : {
@@ -9,10 +10,10 @@ module.exports = {
 			'/user/*' : {
 				target : 'http://jsonplaceholder.typicode.com/posts/',
 				secure : false,
-				changeOrigin: true,
-				pathRewrite: {
-                    "^/user": ""
-                }
+				changeOrigin : true,
+				pathRewrite : {
+					"^/user" : ""
+				}
 			}
 		}
 	},
@@ -51,5 +52,9 @@ module.exports = {
 		'Radio' : 'backbone.radio'
 	}), new HTMLWebpackPlugin({
 		template : './src/app.html'
-	}) ]
+	}), new CopyWebpackPlugin([ {
+		context : 'vendor/',
+		from : '**/*',
+		to: path.resolve(__dirname, 'dist/vendor')
+	} ]) ]
 }
