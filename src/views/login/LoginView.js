@@ -1,4 +1,4 @@
-import template from '../../templates/login/LoginTmpl.hbs';
+import template from 'templates/login/LoginTmpl.hbs';
 import appVent from '../../appVent';
 import appConstants from '../../appConstants';
 

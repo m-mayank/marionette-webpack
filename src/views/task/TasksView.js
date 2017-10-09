@@ -1,4 +1,4 @@
-import template from '../../templates/task/TasksTmpl.hbs';
+import template from 'templates/task/TasksTmpl.hbs';
 import TaskView from './TaskView';
 
 var TasksView = Marionette.CompositeView.extend({

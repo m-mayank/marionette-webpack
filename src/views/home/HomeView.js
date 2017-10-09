@@ -1,4 +1,4 @@
-import template from '../../templates/home/HomeTmpl.hbs';
+import template from 'templates/home/HomeTmpl.hbs';
 import TasksView from '../task/TasksView';
 import TaskModel from '../../models/task/TaskModel';
 

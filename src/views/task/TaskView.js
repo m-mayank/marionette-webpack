@@ -1,4 +1,4 @@
-import template from '../../templates/task/TaskTmpl.hbs';
+import template from 'templates/task/TaskTmpl.hbs';
 var TaskView = Marionette.ItemView.extend({
 	
 	id: 'task-view',

@@ -21,6 +21,11 @@ module.exports = function(env) {
 				}
 			}
 		},
+		resolve: {
+			alias : {
+				templates : path.resolve(__dirname, 'src/templates/')
+			}
+		},
 		devtool : (env.prod) ? false : 'inline-source-map',
 		entry : {
 			app : "./src/app.js",

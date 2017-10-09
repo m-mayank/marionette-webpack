@@ -1,4 +1,4 @@
-import template from '../templates/AppLayoutTmpl.hbs';
+import template from 'templates/AppLayoutTmpl.hbs';
 import appVent from '../appVent';
 import appConstants from '../appConstants';
 import LoginView from './login/LoginView';
