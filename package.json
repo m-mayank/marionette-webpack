@@ -34,8 +34,9 @@
     "mocha-webpack": "0.7.0",
     "requirejs": "2.3.5",
     "style-loader": "0.18.2",
+    "uglifyjs-webpack-plugin": "0.4.6",
     "webpack": "3.6.0",
-    "webpack-dev-server": "2.8.2",
+    "webpack-dev-server": "^2.7.1",
     "webpack-node-externals": "1.6.0"
   }
 }

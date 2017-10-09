@@ -1,7 +1,9 @@
-var path = require('path');
-var Webpack = require('webpack');
-var HTMLWebpackPlugin = require('html-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+var path = require('path'), 
+	pkg = require('./package.json'), 
+	Webpack = require('webpack'), 
+	HTMLWebpackPlugin = require('html-webpack-plugin'), 
+	CopyWebpackPlugin = require('copy-webpack-plugin'),
+	UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
 	devServer : {
@@ -20,9 +22,7 @@ module.exports = {
 	devtool : 'inline-source-map',
 	entry : {
 		app : "./src/app.js",
-		vendor : [ 'jquery', 'jquery-ui', 'underscore', 'foundation-sites',
-				'backbone.stickit', 'backbone.radio', 'backbone.marionette',
-				'backbone-validation', 'backbone' ]
+		vendor : Object.keys(pkg.dependencies).filter(function(key) { return key !== 'handlebars' })
 	},
 	output : {
 		filename : 'bundle.js',
@@ -55,6 +55,8 @@ module.exports = {
 	}), new CopyWebpackPlugin([ {
 		context : 'vendor/',
 		from : '**/*',
-		to: path.resolve(__dirname, 'dist/vendor')
-	} ]) ]
+		to : path.resolve(__dirname, 'dist/vendor')
+	} ]), new UglifyJSPlugin({
+		sourceMap: true
+	}) ]
 }
