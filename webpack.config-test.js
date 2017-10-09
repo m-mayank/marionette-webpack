@@ -20,6 +20,7 @@ module.exports = {
 		'Backbone.Stickit': 'backbone.stickit',
 		'Backbone.Validation': 'backbone-validation',
 		'Radio' : 'backbone.radio',
-		'assert' : 'assert'
+		'assert' : 'assert',
+		'requirejs': 'requirejs'
 	}) ]
 };

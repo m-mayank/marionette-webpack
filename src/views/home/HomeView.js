@@ -13,7 +13,9 @@ var HomeView = Marionette.LayoutView.extend({
 	},
 	
 	onRender: function () {
+		this.formatMoney();
 		this.renderTasksView();
+		
 	},
 	
 	renderTasksView: function () {
@@ -21,6 +23,12 @@ var HomeView = Marionette.LayoutView.extend({
 			model: new TaskModel(),
 			collection: this.model.get('tasks')
 		}));
+	},
+	
+	formatMoney: function () {
+		requirejs(['vendor/libs/accounting.js'], function (accounting) {
+			console.log(accounting.formatMoney(2231));
+		})
 	}
 	
 });
